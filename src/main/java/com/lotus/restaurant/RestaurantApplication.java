@@ -6,6 +6,7 @@ package com.lotus.restaurant;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
@@ -18,6 +19,7 @@ import com.lotus.restaurant.service.RestaurantService;
 import com.lotus.restaurant.utils.RestaurantConverter;
 
 @Import({ RestaurantService.class, RestaurantConverter.class, RestaurantDao.class, RestaurantEntity.class })
+@EnableOAuth2Sso
 @SpringBootApplication
 /*
  * @ComponentScan(basePackages = { "com.lotus.restaurant.*",

@@ -4,6 +4,7 @@
 
 package com.lotus.restaurant.controller;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,15 @@ public class RestaurantController {
 
 	@Autowired
 	private RestaurantService restaurantService;
+	
+	
+	@GetMapping(value = "/")
+	public String getSecurity(Principal principal) {
+		
+		return "Hi "+principal.getName()+" welcome to kishan Restaurant";
+
+	}
+	
 
 	/*
 	 * create new restaurant
